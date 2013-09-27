@@ -1,0 +1,168 @@
+/* Page styles */
+
+body,h1,h2,h3,p,td,quote,small,form,input,ul,li,ol,label{
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 1.3em;
+}
+
+body{
+	margin-top:20px;
+	color:#51555C;
+	font-size:14px;
+	background-color:#123456;
+	text-align:center;
+}
+
+.clear{
+	clear:both;
+}
+
+a, a:visited {
+	color:#007bc4;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+.container{
+	width:88%;
+	text-align:left;
+	background-color: #f8f8f8;
+	padding: 20px;
+	margin:25px auto;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	min-width: 550px;
+}
+
+h1{
+	font-size:28px;
+	font-weight:bold;
+	font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+}
+
+h2{
+	font-weight:normal;
+	font-size:20px;
+	
+	color:#999999;
+}
+
+#navigation {
+	margin:20px 0px;
+}
+
+#navigation li{
+	list-style: none;
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+#navigation li a{
+	padding: 15px 25px;
+	text-align: center;
+	background-color: #123456;
+	color: white;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: block;
+	margin-right: 10px;
+}
+
+#navigation li a:hover, li a:visited{
+	background-color: lightblue;
+	text-decoration: none;
+	text-shadow: 2px 2px 1px #112233;
+}
+
+#pageContent{
+	margin-top:20px;
+
+	border:1px dashed #cccccc;
+	padding:10px;
+		
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+
+	position: relative;
+	clear: both;
+}
+
+#loading{
+	visibility:hidden;
+}
+header {
+	font-weight: bold
+}
+.demo{
+	color:#fafafa;
+}
+.mediciones > div {
+	display: inline-block;
+}
+.green {
+	background-color: lightgreen;
+}
+.yellow {
+	background-color: yellow;
+}
+.orange {
+	background-color: gold;
+}
+.orangered {
+	background-color: darkorange;
+}
+.red {
+	background-color: red;
+}
+.fuxsia {
+	background-color: indianred;
+}
+.pink {
+	background-color: pink;
+}
+.reference-container {
+	right: 1em;
+	top: 1em;
+	position: absolute;
+}
+.reference-container {
+	font-weight: normal;
+	font-size: 0.9em;
+	text-align: right;
+}
+
+.reference-container span{
+	margin: 2px;
+	min-width: 2em;
+	height: 2em;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 2em;
+}
+.data-container {
+	display: inline-block;
+}
+.data-container > div {
+	padding: 10px;
+	font-weight: bold;
+	text-align: right;
+}
+.data-container > span {
+	padding: 8px 12px;
+	margin: 4px;
+	font-weight: bold;
+	text-align: center;
+	background-color: gold;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	display: block;
+}
