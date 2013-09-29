@@ -1,0 +1,32 @@
+<div class="mediciones">
+	<div class="data-container">
+		<div>Viento</div>
+		<div>Material Particulado</div>
+		<div>Dióxido de Azufre</div>
+		<div>Ozono</div>
+		<div>Dióxido de Nitrógeno</div>
+		<div>Monóxido de Carbono</div>
+	</div>
+	<div class="data-container">
+		<span><%= wind %></span>
+		<span class="<%= aqiCategory.pm10.toLowerCase() %>"><%= pm10 %> ug/m3</span>
+		<span class="<%= aqiCategory.so2.toLowerCase() %>"><%= so2 %> ppb</span>
+		<span class="<%= aqiCategory.o3.toLowerCase() %>"><%= o3 %> ppb</span>
+		<span class="<%= aqiCategory.no2.toLowerCase() %>"><%= no2 %> ppb</span>
+		<span class="<%= aqiCategory.co.toLowerCase() %>"><%= co %> ppb</span>
+	</div>
+	<div class="reference-container">
+		<header>Referencia de Colores</header>
+		<div>Bueno <span class="green"></span></div>
+		<div>Moderado <span class="yellow"></span></div>
+		<div>Insalubre (grupos sensitivos) <span class="orange"></span></div>
+		<div>Insalubre <span class="red"></span></div>
+		<div>Muy Insalubre <span class="brown"></span></div>
+		<div>Peligroso <span class="violet"></span></div>
+	</div>
+	<p>
+		</br>* Última Actualización: 
+		<% date = new Date(lastUpdate); %>
+		<%= date.toLocaleDateString() +" "+ date.toLocaleTimeString() %>
+	</p>
+</div>
