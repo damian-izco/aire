@@ -1,8 +1,8 @@
 /* Page styles */
 
 body,h1,h2,h3,p,td,quote,small,form,input,ul,li,ol,label{
-	margin:0px;
-	padding:0px;
+	margin: 0;
+	padding: 0;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size: 1.3em;
 }
@@ -25,82 +25,75 @@ a, a:visited {
 	outline:none;
 }
 
-a:hover{
-	text-decoration:underline;
-}
-
 .container{
 	width:88%;
 	text-align:left;
-	background-color: #f8f8f8;
-	padding: 20px;
+	border: solid 20px #f8f8fa;
 	margin:25px auto;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	min-width: 550px;
+	background-color: #f8f8fa;
+	background-size: contain;
 }
 
-h1{
+h1 {
 	font-size:28px;
 	font-weight:bold;
 	font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
 }
 
-h2{
+h2 {
 	font-weight:normal;
 	font-size:20px;
-	
 	color:#999999;
 }
 
-#navigation {
+.navigation {
 	margin:20px 0px;
 }
 
-#navigation li{
+.navigation li{
 	list-style: none;
 	display: block;
 	float: left;
 	width: 50%;
 }
 
-#navigation li a{
-	padding: 15px 25px;
+.navigation li a{
+	padding: 12px 0;
+	margin: 3px 6px 3px ;
 	text-align: center;
-	background-color: #123456;
+	background-color: #456;
+	border: solid 1px #abc;
 	color: white;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: block;
-	margin-right: 10px;
+	font-size: 0.9em;
 }
 
-#navigation li a:hover, li a:visited{
+.navigation li a:hover, .navigation li .selected{
+	padding: 15px 0;
+	margin: 0 6px 0;
 	background-color: lightblue;
 	text-decoration: none;
 	text-shadow: 2px 2px 1px #112233;
+	font-size: 1em;
 }
 
-#pageContent{
+.pageContent{
 	margin-top:20px;
-
 	border:1px dashed #cccccc;
-	padding:10px;
-		
-	-moz-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-
+	padding: 25px 15px;
 	position: relative;
 	clear: both;
+	background-color: #f8f8fa;
 }
 
-#loading{
-	visibility:hidden;
-}
 header {
-	font-weight: bold
+	font-weight: bold;
+	padding: 5px 0;
 }
 .demo{
 	color:#fafafa;
@@ -112,23 +105,21 @@ header {
 	background-color: lightgreen;
 }
 .yellow {
-	background-color: yellow;
+	background-color: #FFFF66;
 }
 .orange {
 	background-color: gold;
 }
-.orangered {
-	background-color: darkorange;
-}
 .red {
-	background-color: red;
+	background-color: orangered;
 }
-.fuxsia {
-	background-color: indianred;
+.violet {
+	background-color: #CC00BB;
 }
-.pink {
-	background-color: pink;
+.brown {
+	background-color: #CC0000;
 }
+
 .reference-container {
 	right: 1em;
 	top: 1em;
@@ -140,29 +131,36 @@ header {
 	text-align: right;
 }
 
-.reference-container span{
-	margin: 2px;
-	min-width: 2em;
+.reference-container span {
+	margin: 1px;
+	min-width: 1.5em;
 	height: 2em;
+	border: solid 1px #bbb;
 	display: inline-block;
 	vertical-align: middle;
-	line-height: 2em;
 }
 .data-container {
 	display: inline-block;
 }
 .data-container > div {
-	padding: 10px;
+	padding: 12px 8px;
 	font-weight: bold;
 	text-align: right;
 }
 .data-container > span {
-	padding: 8px 12px;
+	padding: 9px 12px;
 	margin: 4px;
-	font-weight: bold;
 	text-align: center;
-	background-color: gold;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	display: block;
+	border: solid 1px #bbb;
+}
+.mediciones p {
+	font-size: 0.9em
+}
+
+.loading {
+	margin: 0 15px;
+	border: 1px dotted #ccc;
 }
