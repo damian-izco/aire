@@ -26,7 +26,8 @@
 	</div>
 	<p>
 		</br>* Última Actualización: 
-		<% date = new Date(lastUpdate); %>
-		<%= date.toLocaleDateString() +" "+ date.toLocaleTimeString() %>
+		<%	date = new Date(lastUpdate); 
+			print(date.toLocaleDateString() +" "+ date.toLocaleTimeString());
+		%>
 	</p>
 </div>

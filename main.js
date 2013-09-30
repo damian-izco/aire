@@ -29,7 +29,7 @@ function checkURL(hash) {
 // given a hash, retruns a filename and data object
 function route(hash, callback) {
 	var file, url;
-	
+
 	// routing
 	if (hash === "#historico") {
 		file = "./pages/historico.html";
