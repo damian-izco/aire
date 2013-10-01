@@ -8,12 +8,12 @@
 		<div>Monóxido de Carbono</div>
 	</div>
 	<div class="data-container">
-		<span><%= wind %></span>
-		<span class="<%= aqiCategory.pm10.toLowerCase() %>"><%= pm10 %> ug/m3</span>
-		<span class="<%= aqiCategory.so2.toLowerCase() %>"><%= so2 %> ppb</span>
-		<span class="<%= aqiCategory.o3.toLowerCase() %>"><%= o3 %> ppb</span>
-		<span class="<%= aqiCategory.no2.toLowerCase() %>"><%= no2 %> ppb</span>
-		<span class="<%= aqiCategory.co.toLowerCase() %>"><%= co %> ppb</span>
+		<span><%= data.wind %></span>
+		<span class="<%= data.aqiCategory.pm10.toLowerCase() %>"><%= data.pm10 %> ug/m3</span>
+		<span class="<%= data.aqiCategory.so2.toLowerCase() %>"><%= data.so2 %> ppb</span>
+		<span class="<%= data.aqiCategory.o3.toLowerCase() %>"><%= data.o3 %> ppb</span>
+		<span class="<%= data.aqiCategory.no2.toLowerCase() %>"><%= data.no2 %> ppb</span>
+		<span class="<%= data.aqiCategory.co.toLowerCase() %>"><%= data.co %> ppb</span>
 	</div>
 	<div class="reference-container">
 		<header>Referencia de Colores</header>
@@ -26,8 +26,8 @@
 	</div>
 	<p>
 		</br>* Última Actualización: 
-		<%	date = new Date(lastUpdate); 
-			print(date.toLocaleDateString() +" "+ date.toLocaleTimeString());
+		<%	date = new Date(data.lastUpdate); 
+			print(date.toLocaleString());
 		%>
 	</p>
 </div>

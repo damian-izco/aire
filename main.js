@@ -32,8 +32,11 @@ function route(hash, callback) {
 
 	// routing
 	if (hash === "#historico") {
+		var tstamp = new Date().getTime();
+
 		file = "./pages/historico.html";
-		url = "";
+		url = "http://air-monitor.appspot.com/resources/air-samples?startTimeMillis="
+			+ (tstamp - 86400000*2) + "&endTimeMillis=" + tstamp;
 	} else {
 		file = "./pages/mediciones.html";
 		url = "http://air-monitor.appspot.com/resources/air-sample";
@@ -61,7 +64,7 @@ function loadPage(hash)
 				file,
 				function(response) {
 					$(".loading").hide();
-					return $(".pageContent").html($(this).html(_.template(response, data)));
+					return $(".pageContent").html($(this).html(_.template(response, data, {variable: 'data'})));
 			});
 	});
 }
