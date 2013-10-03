@@ -4,7 +4,6 @@ body,h1,h2,h3,p,td,quote,small,form,input,ul,li,ol,label{
 	margin: 0;
 	padding: 0;
 	font-family:Arial, Helvetica, sans-serif;
-	font-size: 1.3em;
 }
 h4 {
 	margin: 0;
@@ -36,7 +35,7 @@ a, a:visited {
 	margin:25px auto;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
-	min-width: 550px;
+	min-width: 900px;
 	background-color: #f8f8fa;
 	background-size: contain;
 }
@@ -54,7 +53,12 @@ h2 {
 }
 
 .navigation {
-	margin:20px 0px;
+	margin: 10px 0px;
+}
+
+.navigation input, .navigation select{
+	margin: 5px 0;
+	height: 1.5em;
 }
 
 .navigation li{
@@ -62,28 +66,28 @@ h2 {
 	display: block;
 	float: left;
 	width: 50%;
+	text-align: center;
 }
 
 .navigation li a{
-	padding: 12px 0;
-	margin: 3px 6px 3px ;
+	margin: 0 6px 0;
 	text-align: center;
 	background-color: #456;
-	border: solid 1px #abc;
+	border: solid 1px #789;
 	color: white;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: block;
-	font-size: 0.9em;
+	font-size: 1.4em;
+	line-height: 50px;
 }
 
 .navigation li a:hover, .navigation li .selected{
-	padding: 15px 0;
-	margin: 0 6px 0;
-	background-color: lightblue;
+	background-color: #abc;
 	text-decoration: none;
-	text-shadow: 2px 2px 1px #112233;
-	font-size: 1em;
+	text-shadow: 2px 2px 1px #123;
+	font-size: 1.6em;
+	line-height: 50px;
 }
 
 .pageContent{
@@ -93,6 +97,7 @@ h2 {
 	position: relative;
 	clear: both;
 	background-color: #f8f8fa;
+	min-height: 200px;
 }
 
 header {
@@ -145,7 +150,8 @@ header {
 	vertical-align: middle;
 }
 .data-container {
-	display: inline-block;
+	display: block;
+	float: left;
 }
 .data-container > div {
 	padding: 12px 8px;
@@ -180,10 +186,19 @@ header {
 }
 
 .historico .bar{
-	width: 4px;
-	margin: 0 1px 0 0;
+	width: 5px;
+	/*margin: 0 1px 0 0;*/
 	background-color: lightgreen;
 	display: inline-block;
 	vertical-align: bottom;
 	border-bottom: 1px solid gray;
+	max-height: 200px;
+}
+.error-message {
+	text-align: center;
+	margin-top: 80px;
+}
+.slider {
+	overflow: auto;
+	width: 100%;
 }

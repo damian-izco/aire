@@ -1,35 +1,59 @@
-<div class="historico">
-	<% var x; %>
-	<h4>Datos Históricos desde: <%= x=new Date(data[0].lastUpdate).toLocaleString() %>hs hasta <%= x=new Date(data[data.length-1].lastUpdate).toLocaleString() %>hs</h4>
-	</br>
-	<div class="clear">
-		<h4>Material Particulado</h4>
-	<% _.each(data, function(element, index){
-		%><div class="bar" style="height: <%= element.pm10*3 %>px;"
-			title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.pm10 %> ug/m3"></div><% }) %>
-	</div>
-	<div class="clear">
-		<h4>Dióxido de Azufre</h4>
-	<% _.each(data, function(element, index){ 
-	 	%><div class="bar" style="height: <%= element.so2*100 %>px;"
-	 		title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.so2 %> ppb"></div><% }) %>
-	</div>
-	<div class="clear">
-		<h4>Ozono</h4>
-	<% _.each(data, function(element, index){
-		%><div class="bar" style="height: <%= element.o3*3 %>px;"
-			title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.o3 %> ppb"></div><% }) %>
-	</div>
-	<div class="clear">
-		<h4>Dióxido de Nitrógeno</h4>
-	<% _.each(data, function(element, index){
-		%><div class="bar" style="height: <%= element.no2*3 %>px;"
-			title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.no2 %> ppb"></div><% }) %>
-	</div>
-	<div class="clear">
-		<h4>Monóxido de Carbono</h4>
-	<% _.each(data, function(element, index){
-		%><div class="bar" style="height: <%= element.co/50 %>px;"
-			title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.co %> ppb"></div><% }) %>
-	</div>
+<div class="historico"><%  
+  var x, 
+    muestras = parseInt(days/3)+1,
+    width = (data.length / muestras * 5)+50 + "px";
+
+  if (data.length > 0) {
+%>
+  <h4>Datos Históricos desde: <%= x=new Date(data[0].lastUpdate).toLocaleString() %>hs hasta <%= x=new Date(data[data.length-1].lastUpdate).toLocaleString() %>hs</h4>
+  </br>
+  <div class="clear slider">
+    <h4>Material Particulado</h4>
+    <div style="width: <%= width %>">
+  <% _.each(data, function(element, index){
+    if (index % muestras === 0) {
+    %><div class="bar" style="height: <%= element.pm10 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.pm10 %> ug/m3"></div><% }}) 
+     %>
+   </div>
+  </div>
+  <div class="clear slider">
+    <h4>Dióxido de Azufre</h4>
+    <div style="width: <%= width %>">
+  <% _.each(data, function(element, index){ 
+    if (index % muestras === 0) {
+    %><div class="bar" style="height: <%= element.so2*50 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.so2 %> ppb"></div><% }}) %>
+    </div>
+  </div>
+  <div class="clear slider">
+    <h4>Ozono</h4>
+    <div style="width: <%= width %>">
+  <% _.each(data, function(element, index){
+    if (index % muestras === 0) {
+    %><div class="bar" style="height: <%= element.o3*2 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.o3 %> ppb"></div><% }}) %>
+    </div>
+  </div>
+  <div class="clear slider">
+    <h4>Dióxido de Nitrógeno</h4>
+    <div style="width: <%= width %>">
+  <% _.each(data, function(element, index){
+    if (index % muestras === 0) {
+    %><div class="bar" style="height: <%= element.no2*2 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.no2 %> ppb"></div><% }}) %>
+    </div>
+  </div>
+  <div class="clear slider">
+    <h4>Monóxido de Carbono</h4>
+    <div style="width: <%= width %>">
+  <% _.each(data, function(element, index){
+    if (index % muestras === 0) {
+    %><div class="bar" style="height: <%= element.co/25 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.co %> ppb"></div><% }}) %>
+    </div>
+  </div>
+<% } else { %>
+  <h2 class="error-message">No hay datos disponibles en el periodo seleccionado.</h2>
+<% } %>
 </div>

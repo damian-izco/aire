@@ -1,6 +1,5 @@
 <div class="mediciones">
 	<div class="data-container">
-		<div>Viento</div>
 		<div>Material Particulado</div>
 		<div>Dióxido de Azufre</div>
 		<div>Ozono</div>
@@ -8,12 +7,25 @@
 		<div>Monóxido de Carbono</div>
 	</div>
 	<div class="data-container">
-		<span><%= data.wind %></span>
 		<span class="<%= data.aqiCategory.pm10.toLowerCase() %>"><%= data.pm10 %> ug/m3</span>
 		<span class="<%= data.aqiCategory.so2.toLowerCase() %>"><%= data.so2 %> ppb</span>
 		<span class="<%= data.aqiCategory.o3.toLowerCase() %>"><%= data.o3 %> ppb</span>
 		<span class="<%= data.aqiCategory.no2.toLowerCase() %>"><%= data.no2 %> ppb</span>
 		<span class="<%= data.aqiCategory.co.toLowerCase() %>"><%= data.co %> ppb</span>
+	</div>
+
+	<div class="data-container">
+		<div>Última</br>Actualización</div>
+		<div>Viento</div>
+		<div>Presión</div>	
+	</div>
+	<div class="data-container">
+		<span><%
+			date = new Date(data.lastUpdate); 
+			print(date.toLocaleDateString()+"</br>"+date.toLocaleTimeString()+" hs");
+		%></span>
+		<span><%= data.wind %></span>
+		<span><%= data.pressure %></span>
 	</div>
 	<div class="reference-container">
 		<header>Referencia de Colores</header>
@@ -24,10 +36,4 @@
 		<div>Muy Insalubre <span class="brown"></span></div>
 		<div>Peligroso <span class="violet"></span></div>
 	</div>
-	<p>
-		</br>* Última Actualización: 
-		<%	date = new Date(data.lastUpdate); 
-			print(date.toLocaleString());
-		%>
-	</p>
 </div>
