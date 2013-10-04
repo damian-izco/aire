@@ -69,7 +69,7 @@ function route(hash, callback) {
     url = "http://air-monitor.appspot.com/resources/air-sample";
   }
 
-  response={
+  /*response={
     advice: "Algunos indicadores se encuentran momentaneamente no disponibles en la web municipal.",
     aqiCategory: {pm10:'GREEN', so2:'GREEN', o3:'GREEN', no2:'GREEN', co:'GREEN'},
     co: "GREEN",
@@ -86,15 +86,15 @@ function route(hash, callback) {
     so2: 0.9,
     wind: "NE 3,0 km/h"
   };
-  callback(file, response);
-/*
+  callback(file, response);*/
+
   $.getJSON(
     url,
     function( response ){
       // get json data and callback
       callback(file, response);
     }
-  );*/
+  );
 
 }
 

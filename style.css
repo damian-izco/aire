@@ -72,8 +72,8 @@ h2 {
 .navigation li a{
 	margin: 0 6px 0;
 	text-align: center;
-	background-color: #456;
-	border: solid 1px #789;
+	background-color: #789;
+	border: solid 1px #abc;
 	color: white;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
@@ -82,12 +82,18 @@ h2 {
 	line-height: 50px;
 }
 
-.navigation li a:hover, .navigation li .selected{
-	background-color: #abc;
+.navigation li .selected{
+	background-color: #cde;
 	text-decoration: none;
-	text-shadow: 2px 2px 1px #123;
+	text-shadow: 2px 2px 1px #234;
 	font-size: 1.6em;
 	line-height: 50px;
+}
+
+.navigation li a:hover{
+	font-style: italic;
+	background-color: #cde;
+	text-shadow: 2px 2px 1px #234;
 }
 
 .pageContent{
