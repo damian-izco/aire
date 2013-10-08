@@ -172,6 +172,8 @@ header {
 	border-radius: 5px;
 	display: block;
 	border: solid 1px #bbb;
+	text-shadow: 1px 1px 1px #eee;
+	color: #222;
 }
 .mediciones p {
 	font-size: 0.9em

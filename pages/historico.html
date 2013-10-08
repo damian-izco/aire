@@ -12,7 +12,7 @@
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){
     if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.pm10/2 %>px;"
+    %><div class="bar" style="height: <%= element.pm10/3 %>px;"
       title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.pm10 %> ug/m3"></div><% }}) 
      %>
    </div>
