@@ -129,7 +129,7 @@ header {
 	background-color: orangered;
 }
 .violet {
-	background-color: #CC00BB;
+	background-color: #CC55BB;
 }
 .brown {
 	background-color: #CC0000;
@@ -192,9 +192,8 @@ header {
 }
 
 .historico .bar{
-	width: 5px;
-	/*margin: 0 1px 0 0;*/
-	background-color: lightgreen;
+	width: 9px;
+	margin: 0 1px 0 0;
 	display: inline-block;
 	vertical-align: bottom;
 	border-bottom: 1px solid gray;

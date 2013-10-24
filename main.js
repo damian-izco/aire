@@ -1,5 +1,4 @@
-var lasturl="",
-  days;
+var lasturl="";
 
 $(document).ready(function(){
 
@@ -57,36 +56,15 @@ function route(hash, callback) {
 
   // routing
   if (hash === "#historico") {
-    days = $("#periodo").val();
-    var millsDay=86400000,
-      tstamp = new Date($("#date-ini").val().split('-')).getTime() + millsDay;
+    var myDate=$("#date-ini").val().split("-");
 
     file = "./pages/historico.html";
-    url = "http://air-monitor.appspot.com/resources/air-samples?startTimeMillis="+
-        (tstamp - millsDay*days) + "&endTimeMillis=" + tstamp;
+    url = "http://air-monitor.appspot.com/resources/air-samples?" +
+          "day="+ myDate[2] +"&month="+ myDate[1] +"&year="+ myDate[0];
   } else {
     file = "./pages/mediciones.html";
     url = "http://air-monitor.appspot.com/resources/air-sample";
   }
-
-  /*response={
-    advice: "Algunos indicadores se encuentran momentaneamente no disponibles en la web municipal.",
-    aqiCategory: {pm10:'GREEN', so2:'GREEN', o3:'GREEN', no2:'GREEN', co:'GREEN'},
-    co: "GREEN",
-    no2: "GREEN",
-    o3: "GREEN",
-    pm10: "GREEN",
-    so2: "GREEN",
-    co: 0,
-    lastUpdate: 1380826206677,
-    no2: 6,
-    o3: 27,
-    pm10: 6.4,
-    pressure: 1020.2,
-    so2: 0.9,
-    wind: "NE 3,0 km/h"
-  };
-  callback(file, response);*/
 
   $.getJSON(
     url,
