@@ -1,7 +1,83 @@
 <div class="historico"><%  
   var x, 
-    muestras = parseInt(days/3)+1,
-    width = (data.length / muestras * 5)+50 + "px";
+    width = (data.length * 10)+50 + "px";
+
+    var paint = function(measure, value) {
+      var result;
+
+      if (measure === "o3") {
+        switch (true) {
+          case (value >64 && value <85): 
+            result = "yellow"; break;
+          case (value >84 && value <165): 
+            result = "orange"; break;
+          case (value >164 && value <205): 
+            result = "red"; break;
+          case (value >204 && value <405): 
+            result = "brown"; break;
+          case (value >404): 
+            result = "violet"; break;
+          default:
+            result = "green";
+        }
+      } else if (measure === "pm10") {
+        switch (true) {
+          case (value >54 && value <155): 
+            result = "yellow"; break;
+          case (value >154 && value <255): 
+            result = "orange"; break;
+          case (value >254 && value <355): 
+            result = "red"; break;
+          case (value >354 && value <425): 
+            result = "brown"; break;
+          case (value >424): 
+            result = "violet"; break;
+          default:
+            result = "green";
+        }
+      } else if (measure === "co") {
+        switch (true) {
+          case (value >4400 && value <9400): 
+            result = "yellow"; break;
+          case (value >=9400 && value <12400): 
+            result = "orange"; break;
+          case (value >=12400 && value <15400): 
+            result = "red"; break;
+          case (value >=15400 && value <30400): 
+            result = "brown"; break;
+          case (value >30400): 
+            result = "violet"; break;
+          default:
+            result = "green";
+        }
+      } else if (measure === "so2") {
+        switch (true) {
+          case (value >34  && value < 145): 
+            result = "yellow"; break;
+          case (value >144  && value < 225): 
+            result = "orange"; break;
+          case (value >224  && value < 305): 
+            result = "red"; break;
+          case (value >304  && value < 605): 
+            result = "brown"; break;
+          case (value >604): 
+            result = "violet"; break;
+          default:
+            result = "green";
+        }
+      } else if (measure === "no2") {
+        switch (true) {
+          case (value >650  && value < 1240): 
+            result = "brown"; break;
+          case (value >=1240): 
+            result = "violet"; break;
+          default:
+            result = "green";
+        }
+      }
+      
+      return result;
+    }
 
   if (data.length > 0) {
 %>
@@ -11,9 +87,8 @@
     <h4>Material Particulado</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){
-    if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.pm10/3 %>px;"
-      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.pm10 %> ug/m3"></div><% }}) 
+    %><div class="bar <%= paint("pm10", element.pm10) %>" style="height: <%= element.pm10/4 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.pm10 %> ug/m3"></div><% }) 
      %>
    </div>
   </div>
@@ -21,36 +96,32 @@
     <h4>Dióxido de Azufre</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){ 
-    if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.so2*20 %>px;"
-      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.so2 %> ppb"></div><% }}) %>
+    %><div class="bar <%= paint("so2",element.so2*10) %>" style="height: <%= element.so2*20 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.so2 %> ppb"></div><% }) %>
     </div>
   </div>
   <div class="clear slider">
     <h4>Ozono</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){
-    if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.o3*2 %>px;"
-      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.o3 %> ppb"></div><% }}) %>
+    %><div class="bar <%= paint("o3",element.o3) %>" style="height: <%= element.o3 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.o3 %> ppb"></div><% }) %>
     </div>
   </div>
   <div class="clear slider">
     <h4>Dióxido de Nitrógeno</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){
-    if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.no2*2 %>px;"
-      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.no2 %> ppb"></div><% }}) %>
+    %><div class="bar <%= paint("no2",element.no2) %>" style="height: <%= element.no2 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.no2 %> ppb"></div><% }) %>
     </div>
   </div>
   <div class="clear slider">
     <h4>Monóxido de Carbono</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){
-    if (index % muestras === 0) {
-    %><div class="bar" style="height: <%= element.co/25 %>px;"
-      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.co %> ppb"></div><% }}) %>
+    %><div class="bar <%= paint("co", element.co) %>" style="height: <%= element.co/100 %>px;"
+      title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.co %> ppb"></div><% }) %>
     </div>
   </div>
 <% } else { %>
