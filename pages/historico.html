@@ -96,7 +96,7 @@
     <h4>Dióxido de Azufre</h4>
     <div style="width: <%= width %>">
   <% _.each(data, function(element, index){ 
-    %><div class="bar <%= paint("so2",element.so2*10) %>" style="height: <%= element.so2*20 %>px;"
+    %><div class="bar <%= paint("so2", element.so2) %>" style="height: <%= element.so2*20 %>px;"
       title="<%= x=new Date(element.lastUpdate).toLocaleString() +"\n value: "+ element.so2 %> ppb"></div><% }) %>
     </div>
   </div>

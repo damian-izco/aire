@@ -7,14 +7,14 @@ body,h1,h2,h3,p,td,quote,small,form,input,ul,li,ol,label{
 }
 h4 {
 	margin: 0;
-	padding: 5px 0;
+	padding: 4px 0 8px;
 }
 
 body{
-	margin-top:20px;
-	color:#51555C;
-	font-size:14px;
-	background-color:#123456;
+	margin-top: 20px;
+	color: #51555C;
+	font-size: 14px;
+	background-color: #123456;
 	text-align:center;
 }
 
@@ -29,15 +29,13 @@ a, a:visited {
 }
 
 .container{
-	width:88%;
-	text-align:left;
-	border: solid 20px #f8f8fa;
-	margin:25px auto;
+	width: 92%;
+	border: solid 20px #fefefe;
+	margin: 25px auto;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
-	min-width: 900px;
-	background-color: #f8f8fa;
-	background-size: contain;
+	min-width: 800px;
+	background: url(img/logo-aire.jpg) no-repeat #fefefe 10px 0;
 }
 
 h1 {
@@ -61,38 +59,41 @@ h2 {
 	height: 1.5em;
 }
 
+.navigation #date-ini {
+	width: 120px;
+}
+
 .navigation li{
 	list-style: none;
 	display: block;
 	float: left;
-	width: 50%;
+	width: 23%;
 	text-align: center;
+	height: 50px;
+	background-color: #789;
+	border: solid 1px #abc;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 0 4px;
+	padding: 5px 3px ;
 }
 
 .navigation li a{
-	margin: 0 6px 0;
 	text-align: center;
-	background-color: #789;
-	border: solid 1px #abc;
 	color: white;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
 	display: block;
-	font-size: 1.4em;
-	line-height: 50px;
+	font-size: 20px;
+	line-height: 23px;
 }
 
-.navigation li .selected{
+.navigation .selected{
 	background-color: #cde;
 	text-decoration: none;
 	text-shadow: 2px 2px 1px #234;
-	font-size: 1.6em;
-	line-height: 50px;
 }
 
-.navigation li a:hover{
+.navigation a:hover{
 	font-style: italic;
-	background-color: #cde;
 	text-shadow: 2px 2px 1px #234;
 }
 
@@ -102,8 +103,9 @@ h2 {
 	padding: 15px;
 	position: relative;
 	clear: both;
-	background-color: #f8f8fa;
+	background-color: #fefefe;
 	min-height: 200px;
+	text-align: left;
 }
 
 header {
@@ -111,7 +113,7 @@ header {
 	padding: 5px 0;
 }
 .demo{
-	color:#fafafa;
+	color: #fefefe;
 }
 .mediciones > div {
 	display: inline-block;
@@ -143,14 +145,14 @@ header {
 }
 .reference-container {
 	font-weight: normal;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	text-align: right;
 }
 
 .reference-container span {
-	margin: 1px;
-	min-width: 1.5em;
-	height: 2em;
+	margin: 2px 0;
+	min-width: 1em;
+	height: 1.5em;
 	border: solid 1px #bbb;
 	display: inline-block;
 	vertical-align: middle;
@@ -191,6 +193,9 @@ header {
 	border-radius: 8px;
 	webkit-border-radius: 8px;
 	min-height: 50px;
+	width: 98%;
+	box-shadow: 4px 4px 8px #bcd;
+	webkit-box-shadow: 4px 4px 8px #bcd;
 }
 
 .historico .bar{
@@ -206,6 +211,29 @@ header {
 	margin-top: 80px;
 }
 .slider {
-	overflow: auto;
+	overflow: hidden;
 	width: 100%;
 }
+.creditos {
+	color: silver;
+	line-height: 1.3em;
+	font-size: 12px;
+}
+
+.pageContent .polen {
+	text-align: center;
+}
+
+.pageContent .clima {
+    margin: 40px 20%;
+}
+	.pageContent .clima .Left {
+		float: left;
+	}
+	.pageContent .clima .Right {
+		float: right;
+	}
+	.pageContent .clima h2 {
+		position: absolute;
+		top: 20px;
+	}
