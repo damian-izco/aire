@@ -43,8 +43,8 @@ function formatDate(date){
 
 function checkURL(hash) {
   if(!hash) hash = window.location.hash;
-  if (hash==="") {
-    window.location.hash = "#mediciones";
+  if (!hash) {
+    hash = "#mediciones";
   } else if (hash.split("?")[0]==="#historico") {
     var myDate=$("#date-ini").val().split("-"),
         queryString= "?"+"day="+ myDate[2] +"&month="+ myDate[1] +"&year="+ myDate[0];
@@ -98,7 +98,6 @@ function route(hash, callback) {
         console.log(textStatus + ":" + errorThrown);
       }
   });
-     
 
 }
 
