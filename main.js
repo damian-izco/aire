@@ -70,39 +70,35 @@ function loadPage(hash)
 function route(hash, callback) {
   var file, url, queryString;
 
+  queryString="";
   // routing
   if (hash.split("?")[0] === "#historico") {
     var myDate=$("#date-ini").val().split("-");
     queryString= encodeURIComponent("day="+ myDate[2] +"&month="+ myDate[1] +"&year="+ myDate[0]);
-
     file ="./pages/historico.html";
-    url ="historico";
+    url ="historico&query="+ queryString;
   } else if (hash==="#mediciones") {
     file ="./pages/mediciones.html";
     url ="mediciones";
-    queryString="";
   } else if (hash==="#clima") {
     file ="./pages/clima.html";
     url ="clima";
-    queryString ="";
   } else if (hash==="#polen") {
     file ="./pages/polen.html";
     url ="polen";
-    queryString ="";
   }
 
   $.ajax({
-      url: "http://airebahia.zz.mu/serviceCall.php?url="+ url +"&query="+ queryString,
+      url: "./serviceCall.php?url="+ url,
       type: 'GET',
-      //dataType: "json",
       success: function( response ){
-        // get json data and callback
         callback(file, response);
       },
       error: function(xhr, textStatus, errorThrown){
         console.log(textStatus + ":" + errorThrown);
       }
   });
+     
 
 }
 
